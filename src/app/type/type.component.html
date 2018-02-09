@@ -1,0 +1,185 @@
+<!--面包条-->
+<div style="position: absolute;top: 21px;left: 330px;">
+  <nz-breadcrumb>
+    <nz-breadcrumb-item>
+      首页
+    </nz-breadcrumb-item>
+    <nz-breadcrumb-item>
+      <a href="">分类管理</a>
+    </nz-breadcrumb-item>
+  </nz-breadcrumb>
+</div>
+<!--内容框-->
+<div style="position: absolute;top: 60px;left: 330px;right:0;bottom: 10px;background: white;padding: 10px;overflow: auto">
+  <div style="padding: 10px;height: 100%">
+    <!--按钮区-->
+    <div style="overflow: hidden;border: 1px solid #ececec;border-radius: 5px;padding: 20px 20px 20px 0;">
+      <div nz-row>
+        <div nz-col [nzSpan]="8">
+          <div nz-row>
+            <div nz-col [nzSpan]="8" style="text-align: right;line-height: 28px">专辑id：</div>
+            <div nz-col [nzSpan]="16">
+              <nz-input [nzPlaceHolder]="'专辑id'" style="display: inline-block"></nz-input>
+            </div>
+          </div>
+        </div>
+        <div nz-col [nzSpan]="8">
+          <div nz-row>
+            <div nz-col [nzSpan]="8" style="text-align: right;line-height: 28px">专辑名称：</div>
+            <div nz-col [nzSpan]="16">
+              <nz-input [nzPlaceHolder]="'专辑名称'" style="display: inline-block"></nz-input>
+            </div>
+          </div>
+        </div>
+        <div nz-col [nzSpan]="8">
+          <div nz-row>
+            <div nz-col [nzSpan]="8" style="text-align: right;line-height: 28px">分类：</div>
+            <div nz-col [nzSpan]="16">
+              <nz-select [nzPlaceHolder]="'choose option'" nzAllowClear style="width: 120px">
+                <nz-option [nzLabel]="'label'" [nzValue]="'option'"></nz-option>
+                <nz-option [nzLabel]="'label'" [nzValue]="'option'"></nz-option>
+                <nz-option [nzLabel]="'label'" [nzValue]="'option'"></nz-option>
+              </nz-select>
+            </div>
+          </div>
+        </div>
+      </div><br>
+      <div nz-row>
+        <div nz-col [nzSpan]="8">
+          <div nz-row>
+            <div nz-col [nzSpan]="8" style="text-align: right;line-height: 28px">销量：</div>
+            <div nz-col [nzSpan]="16">
+              <div nz-row>
+                <div nz-col [nzSpan]="10">
+                  <nz-input [nzPlaceHolder]="'0'" style="display: inline-block"></nz-input>
+                </div>
+                <div nz-col [nzSpan]="4" style="line-height: 28px;text-align: center">至</div>
+                <div nz-col [nzSpan]="10">
+                  <nz-input [nzPlaceHolder]="'1000'" style="display: inline-block"></nz-input>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div nz-col [nzSpan]="8">
+          <div nz-row>
+            <div nz-col [nzSpan]="8" style="text-align: right;line-height: 28px">节目数：</div>
+            <div nz-col [nzSpan]="16">
+              <div nz-row>
+                <div nz-col [nzSpan]="10">
+                  <nz-input [nzPlaceHolder]="'0'" style="display: inline-block"></nz-input>
+                </div>
+                <div nz-col [nzSpan]="4" style="line-height: 28px;text-align: center">至</div>
+                <div nz-col [nzSpan]="10">
+                  <nz-input [nzPlaceHolder]="'100'" style="display: inline-block"></nz-input>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div nz-col [nzSpan]="8">
+          <div nz-row>
+            <div nz-col [nzSpan]="8" style="text-align: right;line-height: 28px">价格：</div>
+            <div nz-col [nzSpan]="16">
+              <div nz-row>
+                <div nz-col [nzSpan]="10">
+                  <nz-input [nzPlaceHolder]="'0'" style="display: inline-block"></nz-input>
+                </div>
+                <div nz-col [nzSpan]="4" style="line-height: 28px;text-align: center">至</div>
+                <div nz-col [nzSpan]="10">
+                  <nz-input [nzPlaceHolder]="'200'" style="display: inline-block"></nz-input>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><br>
+      <div nz-row>
+        <div nz-col [nzSpan]="8">
+          <div nz-row>
+            <div nz-col [nzSpan]="8" style="text-align: right;line-height: 28px">渠道：</div>
+            <div nz-col [nzSpan]="16">
+              <nz-select style="width: 120px;" [nzPlaceHolder]="'choose option'" nzAllowClear>
+                <nz-option [nzLabel]="'label'" [nzValue]="'option'" ></nz-option>
+                <nz-option [nzLabel]="'label'" [nzValue]="'option'" ></nz-option>
+                <nz-option [nzLabel]="'label'" [nzValue]="'option'" ></nz-option>
+              </nz-select>
+            </div>
+          </div>
+        </div>
+        <div nz-col [nzSpan]="8">
+          <div nz-row>
+            <div nz-col [nzSpan]="8" style="text-align: right;line-height: 28px">状态：</div>
+            <div nz-col [nzSpan]="16">
+              <nz-select style="width: 120px;" [nzPlaceHolder]="'choose option'" nzAllowClear>
+                <nz-option [nzLabel]="'label'" [nzValue]="'option'" ></nz-option>
+                <nz-option [nzLabel]="'label'" [nzValue]="'option'" ></nz-option>
+                <nz-option [nzLabel]="'label'" [nzValue]="'option'" ></nz-option>
+              </nz-select>
+            </div>
+          </div>
+        </div>
+      </div><br>
+      <button nz-button [nzType]="'primary'" style="margin-left: 70px">
+        <span>搜索</span>
+      </button>
+      <button nz-button [nzType]="'default'">
+        <span>清空</span>
+      </button>
+    </div>
+    <!--中间3个按钮-->
+    <div style="margin: 20px 0">
+      <button nz-button [nzType]="'primary'">
+        <span>添加专题</span>
+      </button>
+      <button nz-button [nzType]="'default'">
+        <span>上架</span>
+      </button>
+      <button nz-button [nzType]="'default'">
+        <span>下架</span>
+      </button>
+    </div>
+    <!--下面列表 -->
+    <div>
+      <nz-table #nzTable [nzDataSource]="_displayData" [nzPageSize]="10">
+        <thead nz-thead>
+        <tr>
+          <th nz-th nzCheckbox>
+            <label nz-checkbox [(ngModel)]="_allChecked" [nzIndeterminate]="_indeterminate" (ngModelChange)="_checkAll($event)">
+            </label>
+          </th>
+          <th nz-th><span>Name</span></th>
+          <th nz-th><span>Age</span></th>
+          <th nz-th><span>Address</span></th>
+          <th nz-th><span>Action</span></th>
+        </tr>
+        </thead>
+        <tbody nz-tbody>
+        <ng-template ngFor let-data [ngForOf]="nzTable.data">
+          <tr nz-tbody-tr>
+            <td nz-td nzCheckbox>
+              <label nz-checkbox [(ngModel)]="data.checked" (ngModelChange)="_refreshStatus($event)">
+              </label>
+            </td>
+            <td nz-td>{{data.name}}</td>
+            <td nz-td>{{data.age}}</td>
+            <td nz-td>{{data.address}}</td>
+            <td nz-td>
+               <span>
+                 <a href="javascript:;">
+                   <button nz-button [nzType]="'default'"  (click)="deleteData(data.key)">
+                     <span style="color:red" >删除</span>
+                   </button>
+                 </a>
+               </span>
+            </td>
+          </tr>
+        </ng-template>
+        </tbody>
+      </nz-table>
+    </div>
+  </div>
+</div>
+
+
+
