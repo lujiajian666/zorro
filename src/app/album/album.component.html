@@ -153,10 +153,16 @@
             <label nz-checkbox [(ngModel)]="_allChecked" [nzIndeterminate]="_indeterminate" (ngModelChange)="_checkAll($event)">
             </label>
           </th>
-          <th nz-th><span>Name</span></th>
-          <th nz-th><span>Age</span></th>
-          <th nz-th><span>Address</span></th>
-          <th nz-th><span>Action</span></th>
+          <th nz-th><span>专辑ID</span></th>
+          <th nz-th><span>专辑名称</span></th>
+          <th nz-th><span>分类</span></th>
+          <th nz-th><span>渠道</span></th>
+          <th nz-th><span>节目数</span></th>
+          <th nz-th><span>封面</span></th>
+          <th nz-th><span>价格</span></th>
+          <th nz-th><span>销量</span></th>
+          <th nz-th><span>状态</span></th>
+          <th nz-th><span>操作</span></th>
         </tr>
         </thead>
         <tbody nz-tbody>
@@ -166,9 +172,15 @@
               <label nz-checkbox [(ngModel)]="data.checked" (ngModelChange)="_refreshStatus($event)">
               </label>
             </td>
+            <td nz-td>{{data.id}}</td>
             <td nz-td>{{data.name}}</td>
-            <td nz-td>{{data.age}}</td>
-            <td nz-td>{{data.address}}</td>
+            <td nz-td>{{data.type}}</td>
+            <td nz-td>{{data.way}}</td>
+            <td nz-td>{{data.showNum}}</td>
+            <td nz-td>{{data.cover}}</td>
+            <td nz-td>{{data.price}}</td>
+            <td nz-td>{{data.sales}}</td>
+            <td nz-td>{{data.state}}</td>          
             <td nz-td>
                <span>
                  <a href="javascript:;">

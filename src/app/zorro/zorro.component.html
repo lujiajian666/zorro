@@ -8,12 +8,24 @@
 </header>
 <main style="background: #ececec;position: absolute;top: 80px;bottom: 50px;left: 0;right: 0">
   <aside style="height: 100%;width: 250px;margin-left: 50px;background: white">
-    <ul nz-menu [nzMode]="'inline'">
-      <li routerLink="/zorro" nz-menu-item>
-        <span title><i class="anticon anticon-mail"></i>专辑管理</span>
-      </li>
-      <li routerLink="./type" nz-menu-item>
-        <span title><i class="anticon anticon-appstore"></i>分类管理</span>
+   <!-- <ul nz-menu [nzMode]="'inline'">
+           <li routerLink="/zorro" nz-menu-item><i class="anticon anticon-mail"></i>专辑管理</li>
+          <li routerLink="./type" nz-menu-item><i class="anticon anticon-appstore"></i>分类管理</li>
+    </ul>-->
+    <ul nz-menu [nzMode]="'inline'" >
+       <li nz-menu-group>
+        <ul>
+          <li nz-menu-item [nzSelected]="true">
+            <a style="display:block" routerLink="/zorro">
+              <i class="anticon anticon-mail"></i>专辑管理
+            </a>
+          </li>
+          <li nz-menu-item routerLink="./type">
+            <a style="display:block" routerLink="/zorro">
+              <i class="anticon anticon-appstore"></i>分类管理
+            </a>
+          </li>
+        </ul>
       </li>
     </ul>
   </aside>

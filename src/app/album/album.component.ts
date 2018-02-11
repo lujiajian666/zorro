@@ -36,41 +36,32 @@ export class AlbumComponent implements OnInit {
   deleteData(value) {
     console.log('delete');
     const arr = [];
-    this._displayData.forEach( (val, index) => {
-      if ( val.key !== value) {
+    this._displayData.forEach((val, index) => {
+      if (val.key !== value) {
         arr.push(val);
       }
     });
     this._displayData = arr;
   }
-  constructor(private albumService:AlbumService) {}
+  constructor(private albumService: AlbumService) { }
   ngOnInit() {
-  /*  console.log('first:' + +new Date())
-    this.http.get('./assets/album.json').subscribe(data => {
-      console.log('second:' + +new Date())
-      const arr = [];
-      for (const i in data) {
-        // this._displayData.push(data[i]);
-        arr.push(data[i]);
-      }
-      this._displayData = arr;
-    });
-    console.log('third:' + +new Date());*/
+     const arr=this.albumService.getAlbumList();
+     this._displayData=arr;
   }
-  beforeUpload(){
+  beforeUpload() {
     document.getElementById("file").click();
   }
-  upload($event){
-    this.albumService.uploadPic("http://k.21cn.com/api/publish/uploadUserPic.do",$event)
-    .then(
-      data=>{
+  upload($event) {
+    this.albumService.uploadPic("http://k.21cn.com/api/publish/uploadUserPic.do", $event)
+      .then(
+      data => {
         console.log(data);
-        console.log("url为:"+data["list"][0]["url"])
+        console.log("url为:" + data["list"][0]["url"])
       }
-    )
-    .catch(
-      ()=>alert("网络信号不好，请稍后重试")
-    )
+      )
+      .catch(
+      () => alert("网络信号不好，请稍后重试")
+      )
   }
-  
+
 }

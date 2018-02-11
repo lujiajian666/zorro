@@ -3,7 +3,7 @@ import { HttpService } from '../common/http.server';
 @Injectable()
 export class AlbumService {
     private url = {
-        listAlbum: '/api/manage/listAlbum',
+        getAlbumList: 'http://localhost:3000/album/getAlbumList',
         addAlbum: '/api/manage/addAlbum',
         listCategory: '/api/manage/listCategory',
         searchAlbumFromXimalaya: '/api/ximalaya/search/albums'
@@ -16,5 +16,13 @@ export class AlbumService {
         var formData = new FormData();
         formData.append('imgFiles',file);
         return this.httpService.post(url,formData);
+    }
+    getAlbumList():any{
+        var http=this.httpService.post(this.url.getAlbumList,{});
+        http.then((data)=>{
+           return data;
+        }).catch((error)=>{
+           console.log(error)
+        })
     }
 }
