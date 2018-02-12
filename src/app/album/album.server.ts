@@ -4,9 +4,8 @@ import { HttpService } from '../common/http.server';
 export class AlbumService {
     private url = {
         getAlbumList: 'http://localhost:3000/album/getAlbumList',
+        deleteAlbum:"http://localhost:3000/album/deleteAlbum",
         addAlbum: '/api/manage/addAlbum',
-        listCategory: '/api/manage/listCategory',
-        searchAlbumFromXimalaya: '/api/ximalaya/search/albums'
     };
 
     constructor(private httpService: HttpService) {}
@@ -17,12 +16,17 @@ export class AlbumService {
         formData.append('imgFiles',file);
         return this.httpService.post(url,formData);
     }
-    getAlbumList():any{
-        var http=this.httpService.post(this.url.getAlbumList,{});
+    getAlbumList(_self):void{
+        var http=this.httpService.post(this.url.getAlbumList,{page:_self._displayIndex});
         http.then((data)=>{
-           return data;
+           _self._displayData=data.data;
+           _self._displayTotal=data.total;
         }).catch((error)=>{
            console.log(error)
+           return [];
         })
+    }
+    deleteAlbum(id:Number):void{
+        var http=this.httpService.post(this.url.deleteAlbum,{id:id});
     }
 }

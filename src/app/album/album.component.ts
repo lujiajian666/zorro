@@ -7,34 +7,14 @@ import { AlbumService } from './album.server';
   templateUrl: './album.component.html',
   styleUrls: ['./album.component.css'],
 })
-export class AlbumComponent implements OnInit {
+export class AlbumComponent implements OnInit{
   _allChecked = false;
   _indeterminate = false;
   _displayData = [];
-  _displayDataChange($event) {
-    this._displayData = $event;
-    this._refreshStatus();
-  }
-  _refreshStatus() {
-    const allChecked = this._displayData.every(value => value.checked === true);
-    const allUnChecked = this._displayData.every(value => !value.checked);
-    this._allChecked = allChecked;
-    this._indeterminate = (!allChecked) && (!allUnChecked);
-  }
-  _checkAll(value) {
-    if (value) {
-      this._displayData.forEach(data => {
-        data.checked = true;
-      });
-    } else {
-      this._displayData.forEach(data => {
-        data.checked = false;
-      });
-    }
-    this._refreshStatus();
-  }
+  _displayTotal = 0;
+  _displayIndex = 1;
+  
   deleteData(value) {
-    console.log('delete');
     const arr = [];
     this._displayData.forEach((val, index) => {
       if (val.key !== value) {
@@ -45,8 +25,7 @@ export class AlbumComponent implements OnInit {
   }
   constructor(private albumService: AlbumService) { }
   ngOnInit() {
-     const arr=this.albumService.getAlbumList();
-     this._displayData=arr;
+    this.albumService.getAlbumList(this);
   }
   beforeUpload() {
     document.getElementById("file").click();
@@ -64,4 +43,31 @@ export class AlbumComponent implements OnInit {
       )
   }
 
+
+
+  _displayDataChange($event) {
+    this._displayData = $event;
+    this._refreshStatus();
+  }
+  _refreshStatus() {
+    const allChecked = this._displayData.every(value => value.checked === true);
+    const allUnChecked = this._displayData.every(value => !value.checked);
+    this._allChecked = allChecked;
+    this._indeterminate = (!allChecked) && (!allUnChecked);
+  }
+  _nzPageIndexChange(){
+    this.albumService.getAlbumList(this);
+  }
+  _checkAll(value) {
+    if (value) {
+      this._displayData.forEach(data => {
+        data.checked = true;
+      });
+    } else {
+      this._displayData.forEach(data => {
+        data.checked = false;
+      });
+    }
+    this._refreshStatus();
+  }
 }
